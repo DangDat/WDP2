@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Assignment 2</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+            <div class="content-wrapper"> 
+                 <img src="~/Images/LEARN_Logo.png"  /> 
+                <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Teaching", "Index", "Teaching")</li>
+                            <li>@Html.ActionLink("Enrolment", "Index", "Enrolment")</li>
+                            <li>@Html.ActionLink("Assessment", "Index", "Assessment")</li>
+                            <li>@Html.ActionLink("Forum", "Index", "Forum")</li>
+                            <li>@Html.ActionLink("About", "Index", "About")</li>
+                            <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                        </ul>
+                    </nav>
+@*                    <nav>
+     @if (Session["MyMenu"] == null){
+        Session["MyMenu"] = Html.Partial("~/Views/Shared/_Menu.cshtml");
+      }
+     @Session["MyMenu"]
+
+</nav>*@
+               
+             </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - By Dat Dang - U3091855</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

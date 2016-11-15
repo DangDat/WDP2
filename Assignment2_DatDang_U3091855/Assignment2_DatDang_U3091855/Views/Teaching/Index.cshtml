@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Assignment2_DatDang_U3091855.Models.Teaching>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Teaching</h2>
+
+<p>
+    @Html.ActionLink("Upload New File", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Filename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Label)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filename)
+        </td>
+        <td>
+             @Html.ActionLink(@item.Label, "DownloadFile", new { fileName = item.Filename })
+            @*@Html.DisplayFor(modelItem => item.Label)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Label", "Edit", new { id=item.FileID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FileID }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

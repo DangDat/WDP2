@@ -1,0 +1,32 @@
+﻿@model List<Assignment2_DatDang_U3091855.Models.Enrolment>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Students List</h2>
+
+@Html.ActionLink("Back", "Index")
+
+<table style="width: 100%">
+
+    <tr>
+        <th>Student Name</th>
+        <th>Date Enrolled</th>
+        <th></th>
+    </tr>
+
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.StudentName</td>
+            <td>@student.EnrolmentDate</td>
+
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { @enrolmentId = student.EnrolmentID, @tutorialId = student.TutorialID })
+            </td>
+
+        </tr>
+    }
+
+</table>

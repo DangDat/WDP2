@@ -1,0 +1,58 @@
+﻿@model Assignment2_DatDang_U3091855.Models.Teaching
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Upload Files</h2>
+
+@using (Html.BeginForm("Create", "Teaching", FormMethod.Post,
+                    new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Teaching</legend>
+       
+             @*<div class="editor-label">
+            @Html.LabelFor(model => model.Filename)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Filename)
+            @Html.ValidationMessageFor(model => model.Filename)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Label)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Label)
+            @Html.ValidationMessageFor(model => model.Label)
+        </div>
+
+       @* <div class="editor-label">
+            @Html.LabelFor(model => model.ReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReleaseDate)
+            @Html.ValidationMessageFor(model => model.ReleaseDate)
+        </div>
+ *@      
+        @*@using (Html.BeginForm("Create", "Teaching", FormMethod.Post,
+                    new { enctype = "multipart/form-data" }))
+                    {
+         *@<input type="file" name="selectedFile" />
+            <input type="submit" value="Upload" />
+        
+         
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

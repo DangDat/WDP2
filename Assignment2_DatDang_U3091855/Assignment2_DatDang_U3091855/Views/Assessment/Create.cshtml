@@ -1,0 +1,63 @@
+﻿@model Assignment2_DatDang_U3091855.Models.Assessment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Assessment", FormMethod.Post,
+                    new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Assessment</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssessmentName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AssessmentName)
+            @Html.ValidationMessageFor(model => model.AssessmentName)
+        </div>
+
+    @*    <div class="editor-label">
+            @Html.LabelFor(model => model.AssessmentLink)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AssessmentLink)
+            @Html.ValidationMessageFor(model => model.AssessmentLink)
+        </div>*@
+
+       @* <div class="editor-label">
+            @Html.LabelFor(model => model.AssessmentGrade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AssessmentGrade)
+            @Html.ValidationMessageFor(model => model.AssessmentGrade)
+        </div>
+*@
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.AssessmentDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AssessmentDate)
+            @Html.ValidationMessageFor(model => model.AssessmentDate)
+        </div>*@
+
+        <p>
+            <input type="file" name="selectedFile" />
+            <input type="submit" value="Upload" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

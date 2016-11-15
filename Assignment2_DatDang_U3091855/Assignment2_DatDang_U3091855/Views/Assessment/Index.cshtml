@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Assignment2_DatDang_U3091855.Models.Assessment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Assessment</h2>
+
+<p>
+    @Html.ActionLink("Upload Assignment", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentName)
+        </td>
+        <td>
+             @Html.ActionLink(@item.AssessmentLink, "DownloadFile", new { fileName = item.AssessmentLink })
+            @*@Html.DisplayFor(modelItem => item.AssessmentLink)*@
+        </td>
+        <td>
+            @if (item.AssessmentGrade == -1)
+            {
+                <span> Not Grade</span>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.AssessmentGrade); 
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentDate)
+        </td>
+        <td>
+            @Html.ActionLink("Grade", "Edit", new { id=item.AssessmentID })
+            @*@Html.ActionLink("Details", "Details", new { id=item.AssessmentID }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.AssessmentID })*@
+        </td>
+    </tr>
+}
+
+</table>

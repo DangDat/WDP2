@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Assignment2_DatDang_U3091855.Models.Forum>
+
+@{
+    ViewBag.Title = "Forum";
+}
+
+<hgroup class="title">
+    <p>You are here: <a href="http://localhost:1914/Forum" style ="color:blue">@ViewBag.Title</a> </p>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+<div id="nav">
+<h3>Semester 2/2014</h3>
+</div>
+
+
+@using(Html.BeginForm("Comment", "Forum", FormMethod.Post))
+{
+    @Html.TextArea("txtComments")
+
+    <input type="submit" value="Post" />
+}
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Posttopic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Postname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Postcomment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Posttopic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Postname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Postcomment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostDate)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
+        </td>
+    </tr>
+       
+}
+    </table>

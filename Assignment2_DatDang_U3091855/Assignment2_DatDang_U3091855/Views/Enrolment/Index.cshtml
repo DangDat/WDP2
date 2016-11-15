@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Enrolment";
+
+    Assignment2_DatDang_U3091855.Models.MyDBContext db = new Assignment2_DatDang_U3091855.Models.MyDBContext();
+}
+
+<script type="text/javascript">
+    function changebutt() {
+        document.getElementById("enrolbutton").innerHTML = "Enrolled";
+    }
+</script>
+
+<hgroup class="title">
+    <p>You are here: <a href="http://localhost:1914/Enrolment" style ="color:blue">@ViewBag.Title</a> </p>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+<div id="nav">
+<h3>Semester 2/2014</h3>
+<ul>
+        <li>Network Security</li>
+        <li>Software Technology 1</li>
+        <li>Web Design</li>
+    </ul>
+</div>
+
+<div id="section"">
+    <h1>Network Security</h1>
+    <h2> Tutor Time</h2>
+<table>
+  <tr>
+    <th> </th>
+      <th></th>
+    <th>Activity</th>
+    <th>Day</th>
+    <th>Time</th>
+    <th>Campus</th>
+    <th>Location</th>
+    <th>Duration</th>
+    <th>Week</th>
+    <th>No Student</th>
+    <th> </th>
+    <th> </th>
+  </tr>
+  <tr>
+    <td>
+   
+        @if (db.Enrolments.Any(x => x.StudentName == User.Identity.Name && x.TutorialID == 1))
+        {
+            <span></span>
+        }
+        else
+        {
+            <span>@Html.ActionLink("Enrol", "Enrol", new { @id = 1 }, new { @style = "color:green;" })</span>
+        }
+         </td>
+      <td>
+          @if (db.Enrolments.Count(x => x.TutorialID == 1) >= 1)
+          {
+            <span>Full</span>
+          }
+          else
+          {
+            <span>Available</span>
+          }
+      </td>
+    <td>01</td>
+    <td>Thu</td>
+    <td>11:30</td>
+    <td>BRUCE</td>
+    <td>B2C1</td>
+    <td>1h</td>
+    <td>21/8-25/9, 9/10-6/11</td>
+    <td>
+        <span>@db.Enrolments.Count(x => x.TutorialID == 1)</span>
+    </td>
+    <td>
+
+        @Html.ActionLink("View", "View", new { @id = 1 })
+    </td>
+   
+  </tr>
+  <tr>
+    <td>
+        @if (db.Enrolments.Any(x => x.StudentName == User.Identity.Name && x.TutorialID == 2))
+        {
+            <span></span>
+        }
+        else
+        {
+            <span>@Html.ActionLink("Enrol", "Enrol", new { @id = 2 }, new { @style = "color:green;" })</span>
+        }
+    </td>
+       <td>
+          @if (db.Enrolments.Count(x => x.TutorialID == 2) >= 1)
+          {
+            <span>Full</span>
+          }
+          else
+          {
+            <span>Available</span>
+          }
+      </td>
+    <td>02</td>
+    <td>Wed</td>
+    <td>10:30</td>
+    <td>BRUCE</td>
+    <td>B2C1</td>
+    <td>1h</td>
+    <td>21/8-25/9, 9/10-6/11</td>
+    <td>
+         <span>@db.Enrolments.Count(x => x.TutorialID == 2)</span>
+    </td>
+    <td>
+        @Html.ActionLink("View", "View", new { @id = 2 })
+    </td>
+  
+  </tr>
+ 
+</table>
+</div>
+
+

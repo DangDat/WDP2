@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <h3 style="color:white"> New Course In Semester 2/2014</h3>
+            <ul>
+                <li style="color:#ffd800">Computer and bussiness</li> 
+                <li style="color:#ffd800">Game Programming</li>
+                <li style="color:#ffd800">Mathematics and life</li>
+
+            </ul>
+        </div>
+    </section>
+}
+
+ <div id ="info-wrapper">
+
+     <div class="info">         
+               <h3><a href="/future-students/?utm_source=CWS&utm_medium=link&utm_campaign=homepage">Future students</a></h3>           
+                 <ul>
+                    <li>Find a course</li> 
+                    <li>Unit description</li>
+                    <li>Enrolment</li>
+                 </ul>
+             
+     </div>
+     <div class="info">      
+               <h3><a href="/future-students/?utm_source=CWS&utm_medium=link&utm_campaign=homepage">Current students</a></h3>               
+                 <ul>
+                    <li>Unit avaiability</li> 
+                    <li>Lecture room</li>
+                    <li>Tutorial room</li>
+                 </ul>             
+     </div>
+     <div class="info">       
+               <h3><a href="/future-students/?utm_source=CWS&utm_medium=link&utm_campaign=homepage">Visitor&Community</a></h3>               
+                 <ul>
+                    <li>Continuing education</li> 
+                    <li>Venue hire</li>
+                    <li>Getting here</li>
+                 </ul>           
+     </div>
+     </div>
+<div id ="info-wrapper">
+     <div class="info">         
+               <h3><a href="/future-students/?utm_source=CWS&utm_medium=link&utm_campaign=homepage">International</a></h3>           
+                 <ul>
+                    <li>Student information</li> 
+                    <li>Our partners</li>
+                    <li>International news</li>
+                 </ul>
+             
+     </div>
+     <div class="info">      
+               <h3><a href="/future-students/?utm_source=CWS&utm_medium=link&utm_campaign=homepage">Research & Innovation</a></h3>               
+                 <ul>
+                    <li>Research centres</li> 
+                    <li>Find a supervisor</li>
+                    <li>Research scholarships</li>
+                 </ul>             
+     </div>
+     <div class="info">       
+               <h3><a href="/future-students/?utm_source=CWS&utm_medium=link&utm_campaign=homepage">Staff information</a></h3>               
+                 <ul>
+                    <li>Find a staff member</li> 
+                    <li>Find a job</li>
+                    <li>Staff intranet</li>
+                 </ul>           
+     </div>
+     </div>
+
+@*<h3>Logged in user: @User.Identity.Name</h3>
+@if (Roles.GetRolesForUser(User.Identity.Name).Length > 0)
+{
+    <h3>Role: @Roles.GetRolesForUser(User.Identity.Name)[0]</h3>
+}*@
+
+     

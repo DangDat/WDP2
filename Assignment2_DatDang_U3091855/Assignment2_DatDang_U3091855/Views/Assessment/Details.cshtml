@@ -1,0 +1,43 @@
+﻿@model Assignment2_DatDang_U3091855.Models.Assessment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Assessment</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssessmentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssessmentName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssessmentLink)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssessmentLink)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssessmentGrade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssessmentGrade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssessmentDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssessmentDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AssessmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

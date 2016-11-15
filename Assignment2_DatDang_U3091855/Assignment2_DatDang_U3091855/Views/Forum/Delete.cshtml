@@ -1,0 +1,47 @@
+﻿@model Assignment2_DatDang_U3091855.Models.Forum
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Postname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model =>  model.Postname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Postcomment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Postcomment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostDate)
+    </div>
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>*@
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,65 @@
+﻿@model Assignment2_DatDang_U3091855.Models.Assessment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Assessment</legend>
+
+        @Html.HiddenFor(model => model.AssessmentID)
+        @Html.HiddenFor(model => model.AssessmentName)
+        @Html.HiddenFor(model => model.AssessmentLink)
+        @Html.HiddenFor(model => model.AssessmentDate)
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.AssessmentName)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.AssessmentName)
+            @Html.ValidationMessageFor(model => model.AssessmentName)
+        </div>
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.AssessmentLink)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.AssessmentLink)
+            @Html.ValidationMessageFor(model => model.AssessmentLink)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssessmentGrade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AssessmentGrade)
+            @Html.ValidationMessageFor(model => model.AssessmentGrade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssessmentDate)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.AssessmentDate)
+            @Html.ValidationMessageFor(model => model.AssessmentDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

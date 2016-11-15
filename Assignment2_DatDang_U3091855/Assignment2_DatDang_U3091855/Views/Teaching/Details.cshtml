@@ -1,0 +1,36 @@
+﻿@model Assignment2_DatDang_U3091855.Models.Teaching
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Teaching</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Filename)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Filename)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Label)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Label)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReleaseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FileID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
